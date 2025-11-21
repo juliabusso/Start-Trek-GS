@@ -1,0 +1,25 @@
+@model IEnumerable<FIAP.CP2.Model.ProfissaoModel>
+@{
+    ViewData["Title"] = "Profissões";
+}
+<h2>Profissões</h2>
+<p><a asp-action="Create">Criar nova</a></p>
+<table class="table">
+    <thead>
+        <tr><th>Nome</th><th>Status</th><th>Tecnologias</th><th></th></tr>
+    </thead>
+    <tbody>
+    @foreach(var item in Model) {
+        <tr>
+            <td>@item.Nome</td>
+            <td>@item.Status</td>
+            <td>@item.TecnologiasRelacionadas</td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
