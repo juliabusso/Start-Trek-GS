@@ -1,0 +1,59 @@
+﻿@{
+    ViewData["Title"] = "Tipos de Profissões";
+}
+
+<h1 style="text-align: center; margin-top: 20px;">🛸 @ViewData["Title"]</h1>
+
+<div style="width: 80%; margin: 20px auto; font-size: 1.1rem; color: #444;">
+    <p>
+        Nosso portal <strong>Start Trek</strong> explora a jornada das profissões através do tempo —
+        as que já existiram, as que moldam o mundo atual e as que surgirão com o avanço das tecnologias.
+        Conhecer essa evolução ajuda estudantes, profissionais e curiosos a entender como o mercado de trabalho se transforma
+        e como se preparar para o futuro.
+    </p>
+</div>
+
+<table class="table table-striped" style="width: 80%; margin: 20px auto;">
+    <thead>
+        <tr>
+            <th style="width: 30%;">Categoria</th>
+            <th>Descrição</th>
+            <th style="width: 20%;">Acessar</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td><strong>📜 Profissões Antigas</strong></td>
+            <td>
+                Explore trabalhos que existiram em outras épocas, entenda seu propósito e descubra
+                por que deixaram de existir com o avanço da sociedade e da tecnologia.
+            </td>
+            <td>
+                <a asp-controller="ProfissoesAntigas" asp-action="Index" class="btn btn-secondary">Ver mais</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td><strong>💼 Profissões Atuais</strong></td>
+            <td>
+                Conheça as carreiras mais relevantes do mercado moderno e entenda por que elas são estruturadas
+                da forma como são hoje.
+            </td>
+            <td>
+                <a asp-controller="ProfissoesAtuais" asp-action="Index" class="btn btn-primary">Ver mais</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td><strong>🚀 Profissões do Futuro</strong></td>
+            <td>
+                Descubra carreiras que estão surgindo com tecnologias como IA, robótica, biotecnologia e automação.
+                Veja previsões e tendências do mercado.
+            </td>
+            <td>
+                <a asp-controller="ProfissoesFuturas" asp-action="Index" class="btn btn-success">Ver mais</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

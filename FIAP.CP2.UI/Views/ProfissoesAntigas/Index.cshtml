@@ -1,0 +1,84 @@
+﻿@{
+    ViewData["Title"] = "Profissões Antigas";
+}
+
+<div style="text-align: center; padding: 30px;">
+    <h1 style="font-size: 2.3rem;">📜 Profissões Antigas</h1>
+    <p style="width: 70%; margin: 20px auto; font-size: 1.15rem; color: #555;">
+        Ao longo da história, diversas profissões existiram para atender necessidades específicas da época.
+        Com o avanço tecnológico, social e industrial, muitas delas desapareceram ou foram totalmente
+        transformadas. Aqui você encontra algumas das mais marcantes profissões antigas, o motivo de seu fim e
+        quais funções modernas assumiram seu lugar.
+    </p>
+</div>
+
+<table class="table table-bordered table-striped" style="width: 85%; margin: 0 auto; font-size: 1.05rem;">
+    <thead class="table-dark">
+        <tr>
+            <th>Profissão</th>
+            <th>O que fazia</th>
+            <th>Por que acabou</th>
+            <th>O que substituiu</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        <tr>
+            <td><strong>Acendedor de Lampião</strong></td>
+            <td>Responsável por acender manualmente os lampiões das ruas ao anoitecer.</td>
+            <td>Com a chegada da eletricidade e iluminação pública automatizada, tornou-se desnecessário.</td>
+            <td>Iluminação elétrica, manutenção elétrica urbana.</td>
+        </tr>
+
+        <tr>
+            <td><strong>Telefonista</strong></td>
+            <td>Operava centrais telefônicas conectando manualmente chamadas entre usuários.</td>
+            <td>A telefonia automática e digital eliminou a necessidade de intervenção humana.</td>
+            <td>Sistemas digitais de telecom, atendentes virtuais, IA de call centers.</td>
+        </tr>
+
+        <tr>
+            <td><strong>Datilógrafo</strong></td>
+            <td>Profissional dedicado a redigir documentos em máquinas de escrever.</td>
+            <td>A popularização dos computadores tornou a digitação acessível a qualquer pessoa.</td>
+            <td>Digitadores, produtores de conteúdo, assistentes administrativos.</td>
+        </tr>
+
+        <tr>
+            <td><strong>Leiteiro</strong></td>
+            <td>Entregava leite fresco de porta em porta diariamente.</td>
+            <td>A industrialização dos alimentos e o surgimento dos supermercados tornaram a função obsoleta.</td>
+            <td>Distribuição industrial, logística e redes varejistas.</td>
+        </tr>
+
+        <tr>
+            <td><strong>Operador de Projetor de Cinema</strong></td>
+            <td>Executava os filmes manualmente usando rolos de película e projetores mecânicos.</td>
+            <td>Os cinemas migraram para projeção digital totalmente automatizada.</td>
+            <td>Técnicos de TI audiovisual e sistemas digitais de projeção.</td>
+        </tr>
+
+        <tr>
+            <td><strong>Escriturário</strong></td>
+            <td>Organizava documentos, arquivos e registros de empresas manualmente.</td>
+            <td>A digitalização eliminou grande parte do trabalho repetitivo em papel.</td>
+            <td>Analistas administrativos, gestores de dados, sistemas ERP.</td>
+        </tr>
+
+        <tr>
+            <td><strong>Projecionista de Slides</strong></td>
+            <td>Operava projetores em aulas e palestras para trocar slides manuais.</td>
+            <td>A tecnologia digital de apresentações tornou o processo automático.</td>
+            <td>Professores usando computadores, projetores digitais e softwares como PowerPoint.</td>
+        </tr>
+
+    </tbody>
+</table>
+
+<div style="text-align: center; margin: 40px 0;">
+    <a asp-controller="Tipos" asp-action="Index"
+       style="background-color: #555; color: white; padding: 12px 28px; border-radius: 8px; font-weight: bold; text-decoration: none;">
+        ← Voltar para Tipos de Profissões
+    </a>
+</div>

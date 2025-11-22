@@ -1,0 +1,91 @@
+﻿@{
+    ViewData["Title"] = "Profissões Atuais";
+}
+
+<div style="text-align: center; padding: 30px;">
+    <h1 style="font-size: 2.3rem;">💼 Profissões Atuais</h1>
+    <p style="width: 70%; margin: 20px auto; font-size: 1.15rem; color: #555;">
+        O mercado de trabalho moderno está em constante transformação. Com o avanço acelerado
+        da tecnologia, algumas carreiras ganham destaque enquanto outras correm risco de desaparecer
+        nos próximos anos. Nesta seção você encontra profissões amplamente conhecidas, suas funções atuais,
+        o risco de substituição e o motivo de algumas se manterem relevantes por muito tempo.
+    </p>
+</div>
+
+<table class="table table-bordered table-striped" style="width: 85%; margin: 0 auto; font-size: 1.05rem;">
+    <thead class="table-dark">
+        <tr>
+            <th>Profissão</th>
+            <th>O que faz</th>
+            <th>Risco de desaparecer?</th>
+            <th>Motivo</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        <tr>
+            <td><strong>Caixa de Supermercado</strong></td>
+            <td>Atende clientes, registra produtos e realiza pagamentos.</td>
+            <td style="color: red;"><strong>Alto</strong></td>
+            <td>O crescimento dos caixas automáticos e sistemas de autoatendimento está substituindo esse papel.</td>
+        </tr>
+
+        <tr>
+            <td><strong>Motorista de Aplicativo</strong></td>
+            <td>Realiza transporte urbano por meio de plataformas digitais.</td>
+            <td style="color: red;"><strong>Alto</strong></td>
+            <td>Veículos autônomos já estão em fase de testes e tendem a assumir essa função no futuro.</td>
+        </tr>
+
+        <tr>
+            <td><strong>Atendente de Call Center</strong></td>
+            <td>Resolve dúvidas e problemas de clientes por telefone.</td>
+            <td style="color: red;"><strong>Altíssimo</strong></td>
+            <td>Inteligências artificiais conversacionais atendem com rapidez e custo menor.</td>
+        </tr>
+
+        <tr>
+            <td><strong>Auxiliar Administrativo</strong></td>
+            <td>Executa tarefas de organização, controle de documentos e rotinas internas.</td>
+            <td style="color: orange;"><strong>Médio</strong></td>
+            <td>Sistemas ERP e automação substituem processos burocráticos repetitivos.</td>
+        </tr>
+
+        <tr>
+            <td><strong>Médico</strong></td>
+            <td>Cuida da saúde, diagnostica, prescreve tratamentos e acompanha pacientes.</td>
+            <td style="color: green;"><strong>Baixo</strong></td>
+            <td>A prática médica exige julgamento humano, empatia e responsabilidade legal — IA auxilia, não substitui.</td>
+        </tr>
+
+        <tr>
+            <td><strong>Professor</strong></td>
+            <td>Ensina, orienta e desenvolve alunos em diversas áreas.</td>
+            <td style="color: green;"><strong>Baixo</strong></td>
+            <td>Apesar da tecnologia, o papel humano na educação continua essencial para a formação social e emocional.</td>
+        </tr>
+
+        <tr>
+            <td><strong>Desenvolvedor de Software</strong></td>
+            <td>Cria sistemas, sites, aplicativos e soluções digitais.</td>
+            <td style="color: green;"><strong>Baixo</strong></td>
+            <td>A demanda cresce a cada ano com a digitalização global — IA acelera o trabalho, mas não elimina o profissional.</td>
+        </tr>
+
+        <tr>
+            <td><strong>Analista de Dados</strong></td>
+            <td>Interpreta dados e ajuda empresas a tomar decisões baseadas em informação.</td>
+            <td style="color: orange;"><strong>Médio</strong></td>
+            <td>IA consegue analisar dados, mas a interpretação estratégica ainda depende de humanos.</td>
+        </tr>
+
+    </tbody>
+</table>
+
+<div style="text-align: center; margin: 40px 0;">
+    <a asp-controller="Tipos" asp-action="Index"
+       style="background-color: #555; color: white; padding: 12px 28px; border-radius: 8px; font-weight: bold; text-decoration: none;">
+        ← Voltar para Tipos de Profissões
+    </a>
+</div>
