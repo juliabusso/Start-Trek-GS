@@ -1,5 +1,5 @@
-﻿using FIAP.CP2.Model;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using FIAP.CP2.Model;
 
 namespace FIAP.CP2.Data
 {
@@ -10,11 +10,12 @@ namespace FIAP.CP2.Data
         {
         }
 
-        // Tabelas do sistema
-        public DbSet<AlunoModel> Alunos { get; set; }
+        // Tabelas do projeto Start Trek
         public DbSet<ProfissaoAntigaModel> ProfissoesAntigas { get; set; }
         public DbSet<ProfissaoAtualModel> ProfissoesAtuais { get; set; }
         public DbSet<ProfissaoFuturaModel> ProfissoesFuturas { get; set; }
+
+        
         public DbSet<TipoModel> Tipos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -22,6 +23,31 @@ namespace FIAP.CP2.Data
             base.OnModelCreating(modelBuilder);
 
             
+            modelBuilder.Entity<ProfissaoAntigaModel>().ToTable("PROFISSOES_ANTIGAS");
+            modelBuilder.Entity<ProfissaoAtualModel>().ToTable("PROFISSOES_ATUAIS");
+            modelBuilder.Entity<ProfissaoFuturaModel>().ToTable("PROFISSOES_FUTURAS");
+            modelBuilder.Entity<TipoModel>().ToTable("TIPOS");
+
+            
+            modelBuilder.Entity<ProfissaoAntigaModel>()
+                .Property(p => p.Nome)
+                .IsRequired()
+                .HasMaxLength(100);
+
+            modelBuilder.Entity<ProfissaoAtualModel>()
+                .Property(p => p.Nome)
+                .IsRequired()
+                .HasMaxLength(100);
+
+            modelBuilder.Entity<ProfissaoFuturaModel>()
+                .Property(p => p.Nome)
+                .IsRequired()
+                .HasMaxLength(100);
+
+            modelBuilder.Entity<TipoModel>()
+                .Property(t => t.Nome)
+                .IsRequired()
+                .HasMaxLength(50);
         }
     }
 }

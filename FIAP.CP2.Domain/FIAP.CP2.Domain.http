@@ -1,0 +1,11 @@
+@FIAP.CP2.Domain_HostAddress = http://localhost:5143
+
+GET {{FIAP.CP2.Domain_HostAddress}}/todos/
+Accept: application/json
+
+###
+
+GET {{FIAP.CP2.Domain_HostAddress}}/todos/1
+Accept: application/json
+
+###

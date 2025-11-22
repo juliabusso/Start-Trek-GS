@@ -1,53 +1,20 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using FIAP.CP2.Model;
+using Microsoft.EntityFrameworkCore.Design;
 
 namespace FIAP.CP2.Data
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContextFactory : IDesignTimeDbContextFactory<ApplicationDbContext>
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-            : base(options)
+        public ApplicationDbContext CreateDbContext(string[] args)
         {
-        }
+            var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
 
-        // Tabelas do projeto Start Trek
-        public DbSet<ProfissaoAntigaModel> ProfissoesAntigas { get; set; }
-        public DbSet<ProfissaoAtualModel> ProfissoesAtuais { get; set; }
-        public DbSet<ProfissaoFuturaModel> ProfissoesFuturas { get; set; }
+            // Coloque sua connection string REAL do Oracle aqui
+            optionsBuilder.UseOracle(
+                "User Id=SEU_USER;Password=SUA_SENHA;Data Source=oracle.fiap.com.br:1521/ORCL;"
+            );
 
-        // Caso o menu Tipos vire tabela
-        public DbSet<TipoModel> Tipos { get; set; }
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-
-            // Configurações básicas das tabelas
-            modelBuilder.Entity<ProfissaoAntigaModel>().ToTable("PROFISSOES_ANTIGAS");
-            modelBuilder.Entity<ProfissaoAtualModel>().ToTable("PROFISSOES_ATUAIS");
-            modelBuilder.Entity<ProfissaoFuturaModel>().ToTable("PROFISSOES_FUTURAS");
-            modelBuilder.Entity<TipoModel>().ToTable("TIPOS");
-
-            // Exemplos de configurações comuns:
-            modelBuilder.Entity<ProfissaoAntigaModel>()
-                .Property(p => p.Nome)
-                .IsRequired()
-                .HasMaxLength(100);
-
-            modelBuilder.Entity<ProfissaoAtualModel>()
-                .Property(p => p.Nome)
-                .IsRequired()
-                .HasMaxLength(100);
-
-            modelBuilder.Entity<ProfissaoFuturaModel>()
-                .Property(p => p.Nome)
-                .IsRequired()
-                .HasMaxLength(100);
-
-            modelBuilder.Entity<TipoModel>()
-                .Property(t => t.Nome)
-                .IsRequired()
-                .HasMaxLength(50);
+            return new ApplicationDbContext(optionsBuilder.Options);
         }
     }
 }
