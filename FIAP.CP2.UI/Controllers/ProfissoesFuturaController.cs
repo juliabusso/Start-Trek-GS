@@ -7,11 +7,11 @@ namespace FIAP.CP2.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class ProfissaoAntigaController : ControllerBase
+    public class ProfissaoFuturaController : ControllerBase
     {
-        private readonly IProfissaoAntigaAppService _service;
+        private readonly IProfissaoFuturaAppService _service;
 
-        public ProfissaoAntigaController(IProfissaoAntigaAppService service)
+        public ProfissaoFuturaController(IProfissaoFuturaAppService service)
         {
             _service = service;
         }
@@ -32,7 +32,7 @@ namespace FIAP.CP2.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] ProfissaoAntigaDto dto)
+        public async Task<IActionResult> Create([FromBody] ProfissaoFuturaDto dto)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
             var created = await _service.CriarAsync(dto);
@@ -40,7 +40,7 @@ namespace FIAP.CP2.API.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, [FromBody] ProfissaoAntigaDto dto)
+        public async Task<IActionResult> Update(int id, [FromBody] ProfissaoFuturaDto dto)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
             var updated = await _service.AtualizarAsync(id, dto);

@@ -1,14 +1,14 @@
-using FIAP.CP2.Model;
 using System.Collections.Generic;
+using FIAP.CP2.Domain.Entities;
 
-namespace FIAP.CP2.Model.Interfaces
+namespace FIAP.CP2.Domain.Interfaces.Repositories
 {
     public interface IProfissaoAtualRepository
     {
-        List<ProfissaoAtualModel> ListarTodas();
-        ProfissaoAtualModel? ObterPorId(int id);
-        void Adicionar(ProfissaoAtualModel model);
-        void Atualizar(ProfissaoAtualModel model);
+        ProfissaoAtual? ObterPorId(int id);
+        List<ProfissaoAtual> ListarTodas();
+        void Adicionar(ProfissaoAtual entidade);
+        void Atualizar(ProfissaoAtual entidade);
         void Remover(int id);
     }
 }
